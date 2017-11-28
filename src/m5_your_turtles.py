@@ -5,12 +5,12 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and Christopher Fusaro.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 # On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #  You should have RUN the PREVIOUS module and READ its code.
 #  (Do so now if you have not already done so.)
@@ -28,3 +28,40 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #  Don't forget to COMMIT your work by using  VCS ~ Commit and Push.
 ########################################################################
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+radius = 40
+size = 80
+
+orange_turtle = rg.SimpleTurtle("turtle")
+orange_turtle.pen = rg.Pen("orange", 10)
+orange_turtle.speed = 500
+orange_turtle.draw_circle(radius)
+
+for i in range(4):
+
+    orange_turtle.draw_circle(radius)
+    orange_turtle.pen_up()
+    orange_turtle.backward(10)
+
+    orange_turtle.pen_down()
+    radius = radius - 5
+
+green_turtle = rg.SimpleTurtle("turtle")
+green_turtle.forward(50)
+green_turtle.pen = rg.Pen("green", 5)
+green_turtle.speed = 700
+green_turtle.draw_square(size)
+
+for k in range(4):
+
+    green_turtle.draw_square(size)
+    green_turtle.pen_up()
+    green_turtle.forward(20)
+
+    green_turtle.pen_down()
+    size = size - 5
+
+
+window.close_on_mouse_click()
