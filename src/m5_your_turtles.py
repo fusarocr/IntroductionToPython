@@ -31,35 +31,50 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 import rosegraphics as rg
 
 window = rg.TurtleWindow()
+window.delay(15)    # Delay to slow down animations.
+
+# The radius of the first circle will 40:
 radius = 40
+
+# The first square will be 300 x 300 pixels:
 size = 80
 
 orange_turtle = rg.SimpleTurtle("turtle")
-orange_turtle.pen = rg.Pen("orange", 10)
-orange_turtle.speed = 500
-orange_turtle.draw_circle(radius)
+orange_turtle.pen = rg.Pen("orange", 10)    # Use an orange pen.
 
+# Repeat the loop four times.
 for i in range(4):
 
+    # Draw a circle of a given radius.
     orange_turtle.draw_circle(radius)
-    orange_turtle.pen_up()
-    orange_turtle.backward(10)
 
+    # Pick the pen up, stop drawing, and move backwards.
+    orange_turtle.pen_up()
+    orange_turtle.backward(15)
+
+    # Put the pen down and decrease the stored radius value.
     orange_turtle.pen_down()
     radius = radius - 5
 
+# Introduce a new turtle.
 green_turtle = rg.SimpleTurtle("turtle")
-green_turtle.forward(50)
-green_turtle.pen = rg.Pen("green", 5)
-green_turtle.speed = 700
-green_turtle.draw_square(size)
 
+# Move the turtle forward.
+green_turtle.forward(50)
+green_turtle.pen = rg.Pen("green", 5)   # Uses a green pen.
+green_turtle.speed = 500    # Speed of the turtle.
+
+# Run the embeded code four times.
 for k in range(4):
 
+    # Draw a square with diimensions of the stored size
     green_turtle.draw_square(size)
+
+    # Pick the pen up, stop drawing, and move forward.
     green_turtle.pen_up()
     green_turtle.forward(20)
 
+    # Put the pen down and decrease the dimensions of the square.
     green_turtle.pen_down()
     size = size - 5
 
